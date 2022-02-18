@@ -7,7 +7,7 @@
 			cancelButton="auto" @input="refleshColl">
 		</uni-search-bar>
 
-		<!-- 搜索框组件含关键词，渲染搜索结果 - 弃用：现折叠面板能根据内容多少动态调整高度 -->
+		<!-- 仅当搜索框组件含关键词，渲染搜索结果 - 弃用：现折叠面板能根据内容多少动态调整高度 -->
 		<!-- <template v-if="keywords">
 			<uni-collapse>
 				<view v-for="(item, i) in allNoti" :key="item.no">

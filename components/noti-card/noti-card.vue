@@ -86,8 +86,9 @@
 		mounted() {
 			// console.log(this.item);
 
-			// 读取通知已读状态
-			if (this.item.level < 0) {
+			// 读取通知已读状态 -弃用等级判断，后端引入新字段 boolean(tinyint):isRead
+			// if (this.item.level < 0) {
+			if (this.item.isRead) {
 				this.altReadStat = "标记为未读";
 				this.chkIcon = "flag-filled";
 				this.numberColor = "primary";

@@ -29,14 +29,17 @@
 
 		// 生命周期函数：页面加载时执行
 		onLoad() {
+			// this.getNoti(); 弃用
+			
 			// 初始化 Vuex 中的 State
-			this.getNoti();
+			this.updateAll();
 		},
 		
 		// 下拉刷新时执行
 		onPullDownRefresh() {
 			// 更新 Vuex 中的 State
-			this.getNoti();
+			// this.getNoti(); 弃用
+			this.updateAll();
 			setTimeout(function(){
 				uni.stopPullDownRefresh()
 			},2000);
@@ -46,7 +49,7 @@
 
 		computed: {
 			// 分发 m_noti:noti.js 的 State
-			...mapState('m_noti', ['allNoti']), 
+			...mapState('m_noti', ['allNoti', 'unreadNoti', 'readNoti']),
 		},
 
 		methods: {
@@ -54,7 +57,7 @@
 			// ...mapMutations('m_noti', ['updateAllNoti']),
 
 			// 分发 m_noti:noti.js 的 Action
-			...mapActions('m_noti', ['getNoti'])
+			...mapActions('m_noti', ['updateAll'])
 		}
 	}
 </script>
